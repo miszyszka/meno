@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>My Project</title>
+  </head>
+  <body>
+    <!-- LOGIN -->
+
+    <div class="login-screen screen visible">
+      <div class="title"><h1>Login</h1></div>
+
+      <div class="login-container">
+        <button class="btn login-btn">+</button>
+        <h4>login!</h4>
+      </div>
+    </div>
+
+    <!-- ---------------------- -->
+    <!-- HOME SCREEN -->
+
+    <div class="home-screen screen hidden">
+      <div class="title"><h1>Hello Michał</h1></div>
+
+      <div id="target"></div>
+
+      <!-- settings -->
+      <!-- 
+  <div class="settings-bnt">
+    <div class="dot" id="dot-1"></div>
+    <div class="dot" id="dot-1"></div>
+    <div class="dot" id="dot-1"></div>
+  </div>
+  <div class="settings-text"><h2>settings</h2></div>
+  -->
+
+      <div class="btn-container" id="add-deck-container">
+        <button class="btn add-deck-btn"></button>
+        <h4>Add new deck!</h4>
+      </div>
+    </div>
+
+    <!-- ADDING DECK SCREEN -->
+    <div class="adding-deck-screen screen hidden">
+      <textarea
+        type="text"
+        id="name-your-deck"
+        placeholder="Name your deck..."
+      ></textarea>
+
+      <div class="deck-small side1">
+        <textarea
+          type="text"
+          id="name-1-side"
+          placeholder="Name 1 side..."
+        ></textarea>
+      </div>
+      <div class="deck-small side2">
+        <textarea
+          type="text"
+          id="name-2-side"
+          placeholder="Name 2 side..."
+        ></textarea>
+      </div>
+
+      <div class="btn go-back-btn">
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="1em"
+            viewBox="0 0 320 512"
+          >
+            <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <path
+              d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <div class="btn create-deck">
+        <div>create</div>
+      </div>
+    </div>
+
+    <!-- ---------------------- -->
+    <!-- ADDING CARD SCREEN -->
+    <div class="adding-card-screen screen hidden">
+      <div class="deck-small side1 side1-card">
+        <textarea
+          type="text"
+          id="textarea-1-side"
+          placeholder="Name 1 side..."
+        ></textarea>
+      </div>
+      <div class="deck-small side2 side2-card">
+        <textarea
+          type="text"
+          id="textarea-2-side"
+          placeholder="Name 2 side..."
+        ></textarea>
+      </div>
+      <div class="btn go-back-btn">
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="1em"
+            viewBox="0 0 320 512"
+          >
+            <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <path
+              d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="btn create" id="create-card">
+        <div>create</div>
+      </div>
+    </div>
+
+    <!-- ---------------------- -->
+    <!-- DECK SCREEN -->
+    <div class="deck-screen screen hidden">
+      <div id="deck-screen-title"><h1>Hello Michał</h1></div>
+
+      <div class="stack stack1" id="s1">
+        <div class="dot-selection" id="dot-selection1"></div>
+        <svg
+          class="stackBTN"
+          width="47"
+          height="47"
+          viewBox="0 0 47 47"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M47 0L0 0L0 47H0.045671L23.6035 23.9017L47 47L47 0Z" />
+        </svg>
+        <div class="lines-container">
+          <div id="line-target1"></div>
+        </div>
+        <div class="counter" id="counter1"><h4>0</h4></div>
+      </div>
+
+      <div class="stack stack2" id="s2">
+        <div class="dot-selection" id="dot-selection2"></div>
+        <svg
+          class="stackBTN"
+          id="2"
+          width="47"
+          height="47"
+          viewBox="0 0 47 47"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M47 0L0 0L0 47H0.045671L23.6035 23.9017L47 47L47 0Z" />
+        </svg>
+        <div class="lines-container">
+          <div id="line-target2"></div>
+        </div>
+        <div class="counter" id="counter2"><h4>0</h4></div>
+      </div>
+
+      <div class="stack stack3" id="s3">
+        <div class="dot-selection" id="dot-selection3"></div>
+        <svg
+          class="stackBTN"
+          width="47"
+          height="47"
+          viewBox="0 0 47 47"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M47 0L0 0L0 47H0.045671L23.6035 23.9017L47 47L47 0Z" />
+        </svg>
+        <div class="lines-container">
+          <div id="line-target3"></div>
+        </div>
+        <div class="counter" id="counter3"><h4>0</h4></div>
+      </div>
+
+      <div class="stack stack4" id="s4">
+        <div class="dot-selection" id="dot-selection4"></div>
+        <svg
+          class="stackBTN"
+          width="47"
+          height="47"
+          viewBox="0 0 47 47"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M47 0L0 0L0 47H0.045671L23.6035 23.9017L47 47L47 0Z" />
+        </svg>
+        <div class="lines-container">
+          <div id="line-target4"></div>
+        </div>
+        <div class="counter" id="counter4"><h4>0</h4></div>
+      </div>
+
+      <div class="btn-container" id="add-new-card">
+        <button class="btn add-deck-btn"></button>
+        <h4>Add new card</h4>
+      </div>
+
+      <div class="btn-container" id="edit-deck">
+        <button class="btn add-deck-btn"></button>
+        <h4>Edit</h4>
+      </div>
+
+      <div class="btn-container smooth" id="start">
+        <button class="btn btn-start"></button>
+        <h4>Start!</h4>
+      </div>
+
+      <div class="smooth" id="call-to-sellect-stack">
+        <h4>Select at least<br />one stack to start...</h4>
+      </div>
+
+      <div class="btn go-back-btn">
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="1em"
+            viewBox="0 0 320 512"
+          >
+            <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <path
+              d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---------------------- -->
+    <!-- LEARN SCREEN -->
+    <div class="learn-screen screen hidden card-container">
+      <div id="target-card"></div>
+
+      <div class="learning-counter"><p>7/7</p></div>
+
+      <div class="level-bar">
+        <div class="stack1">
+          <svg
+            class="smooth"
+            id="level-icon1"
+            width="47"
+            height="47"
+            viewBox="0 0 47 47"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M47 0L0 0L0 47H0.045671L23.6035 23.9017L47 47L47 0Z" />
+          </svg>
+        </div>
+        <div class="stack2">
+          <svg
+            class="smooth"
+            id="level-icon2"
+            width="47"
+            height="47"
+            viewBox="0 0 47 47"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M47 0L0 0L0 47H0.045671L23.6035 23.9017L47 47L47 0Z" />
+          </svg>
+        </div>
+        <div class="stack3">
+          <svg
+            class="smooth"
+            id="level-icon3"
+            width="47"
+            height="47"
+            viewBox="0 0 47 47"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M47 0L0 0L0 47H0.045671L23.6035 23.9017L47 47L47 0Z" />
+          </svg>
+        </div>
+        <div class="stack4">
+          <svg
+            class="smooth"
+            id="level-icon4"
+            width="47"
+            height="47"
+            viewBox="0 0 47 47"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M47 0L0 0L0 47H0.045671L23.6035 23.9017L47 47L47 0Z" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="btn go-back-btn">
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="1em"
+            viewBox="0 0 320 512"
+          >
+            <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <path
+              d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <div class="btn downgrade level-manipulator smooth">
+        <svg
+          class="smooth"
+          id="level-d"
+          width="47"
+          height="47"
+          viewBox="0 0 47 47"
+          fill="red"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M47 0L0 0L0 47H0.045671L23.6035 23.9017L47 47L47 0Z" />
+        </svg>
+      </div>
+
+      <div class="btn upgrade level-manipulator smooth">
+        <svg
+          class="smooth"
+          id="level-u"
+          width="47"
+          height="47"
+          viewBox="0 0 47 47"
+          fill="red"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M47 0L0 0L0 47H0.045671L23.6035 23.9017L47 47L47 0Z" />
+        </svg>
+      </div>
+
+      <div class="btn next" id="next">
+        <div>next</div>
+      </div>
+    </div>
+
+    <!-- ---------------------- -->
+    <!-- CONFIRMATION SCREEN -->
+    <div id="confirmation-screen-target"></div>
+
+    <script src="showDeckScreen.js"></script>
+    <script src="users-data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
