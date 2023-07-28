@@ -5,7 +5,7 @@
 ////////////////////
 function showLearnCard(cards) {
 
-  console.log("showLEARN CARD () is starded =======");
+  console.log("showLEARN CARD () is started =======");
   console.log(cards);
   resetFlagSize()
   learningCounter.textContent = `${cardsToLearn.length} cards left...`
@@ -18,8 +18,8 @@ function showLearnCard(cards) {
   const level = randomCard.level
 
   // HANDLING CHANGE LEVEL BTNS
-  const currenFlag = document.getElementById(`level-icon${level}`)
-  currenFlag.style.transform = 'scale(1) translateY(-12px)'
+  const currentFlag = document.getElementById(`level-icon${level}`)
+  currentFlag.style.transform = 'scale(1) translateY(-12px)'
 
   // Creating html element
   const newCard = document.createElement('div');
