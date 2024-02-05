@@ -39,9 +39,10 @@ body{
   background-color: var(--background-gray);
   color: var(--white);
   font-family: 'Ubuntu', sans-serif;
-  overflow: none;
+  overflow: hidden;
   scroll-behavior: none;
   height: 100vh;
+  overflow-x: hidden;
 }
 
 h1{
@@ -56,13 +57,22 @@ h1{
 
 /* GENERAL */
 
-.hidden{
-  transform: translateX(-100vw);
+.active {
+  transform: translateX(0%);
+  display: flex;
+}
+
+.no-active {
+  transform: translateX(100%);
   display: none;
 }
 
-.visible{
-  transform: translateX(0);
+.btn-visible {
+  transform: translateY(0px);
+}
+
+.btn-invisible {
+  transform: translateY(300px);
 }
 
 .title{
@@ -146,16 +156,22 @@ h1{
   filter: var(--drop-shadow-active);
 }
 
-.go-back-btn{
-  background-color: var(--background-gray);
-  grid-row: 5/5;
-  grid-column: 3/3;
+.go-back{
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  cursor: pointer;
+  fill: var(--background-gray);
 }
 
-.go-back-btn svg{
-  fill: var(--white);
+.go-back img {
+  width: 20px;
+
 }
 
+.go-back-btn svg {
+  fill: white;
+}
 /* DECKS */
 
 .deck-container{
@@ -254,8 +270,6 @@ h1{
   grid-column: 2/2;
 }
 
-
-
 .confirmation-screen{
   grid-template-columns: 1fr calc(var(--cell-width) * 1.2) 1fr;
   grid-template-rows: 1fr repeat(2, var(--cell-height)) 1fr;
@@ -302,6 +316,76 @@ h1{
 ////////////////
 //////////////// */
 
+/* Hello SCREEN */
+
+.title-login{
+  grid-row: 3/3;
+  grid-column: 3/3;
+}
+
+.login-btn{
+  grid-row: 4/4;
+  grid-column: 3/3;
+  justify-self: center;
+}
+
+.signin-btn{
+  grid-row: 4/4;
+  grid-column: 4/4;
+  justify-self: center;
+}
+
+#login-label{
+  grid-row: 5/5;
+  grid-column: 3/3;
+  margin: 0px;
+  padding: 0px;
+  color: var(--white);
+  background-color: var(--background-gray);
+  align-self: flex-start;
+  justify-self: center;
+}
+
+#signin-label{
+  grid-row: 5/5;
+  grid-column: 4/4;
+  margin: 0px;
+  padding: 0px;
+  color: var(--white);
+  background-color: var(--background-gray);
+  align-self: flex-start;
+  justify-self: center;
+}
+
+
+/* Login & Signin SCREEN */
+
+.userName {
+  grid-row: 4/4;
+  grid-column: 3/3;
+}
+
+.password {
+  grid-row: 4/4;
+  grid-column: 4/4;
+}
+
+.try{
+  grid-row: 5/5;
+  grid-column: 3/3;
+}
+
+.invalid {
+  animation: shake .15s ease-in-out 0s
+}
+
+@keyframes shake{
+  0% {margin-left: 0;}
+  25% {margin-left: -7px;}
+  75% {margin-left: 5px;}
+  100% {margin-left: 0;}
+}
+
 /* HOME SCREEN */
 
 #add-deck-container{
@@ -320,6 +404,7 @@ h1{
   align-self: end;
 }
 
+.input,
 textarea{
   outline: none;
   border: none;
@@ -336,6 +421,7 @@ textarea{
   resize: none;
 }
 
+.input::placeholder,
 textarea::placeholder{
   font-size: var(--h3-letters);
   font-style: italic;
@@ -410,7 +496,6 @@ textarea::placeholder{
   transform: translateX(-50%) translateY(5px);
 }
 
-
 .dot-selection{
   background-color: var(--white);
   width: 15px;
@@ -425,7 +510,7 @@ textarea::placeholder{
 .selected{
   transform: translateX(-50%) translateY(-25px);
 }
-
+  
 .lines-container{
   width: auto;
   margin: 0px;

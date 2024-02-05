@@ -9,32 +9,49 @@
   <body>
     <!-- LOGIN -->
 
-    <div class="login-screen screen visible">
-      <div class="title"><h1>Login</h1></div>
+    <div class="hello-screen screen active">
+      <div class="title-login"><h1>Hello!</h1></div>
 
-      <div class="login-container">
-        <button class="btn login-btn">+</button>
-        <h4>login!</h4>
+      <button class="btn login-btn"></button>
+      <h4 id="login-label">login</h4>
+      <button class="btn signin-btn"></button>
+      <h4 id="signin-label">sign in</h4>
+    </div>
+
+    <!-- LOG IN -->
+
+    <div class="login-screen screen no-active">
+      <div class="btn-small go-back go-back-btn">
+        <img src="svg/angles-left-solid.svg" alt="" />
+      </div>
+      <div class="title-login"><h1>Log in</h1></div>
+      <textarea type="text" class="input deck-small userName" id="login-username" placeholder="user name"></textarea>
+      <textarea type="text" class="input deck-small password" id="login-password" placeholder="password"></textarea>
+      <div class="btn try try-login-btn btn-invisible">
+        <div>log in</div>
+      </div>
+    </div>
+
+    <!-- SIGN IN -->
+
+    <div class="signin-screen screen no-active">
+      <div class="btn-small go-back go-back-btn">
+        <img src="svg/angles-left-solid.svg" alt="" />
+      </div>
+      <div class="title-login"><h1>Sign in</h1></div>
+      <textarea type="text" class="input deck-small userName" id="signin-username" placeholder="user name"></textarea>
+      <textarea type="text" class="input deck-small password" id="signin-password"placeholder="password"></textarea>
+      <div class="btn try try-singin-btn">
+        <div>sign in</div>
       </div>
     </div>
 
     <!-- ---------------------- -->
     <!-- HOME SCREEN -->
 
-    <div class="home-screen screen hidden">
-      <div class="title"><h1>Hello Michał</h1></div>
-
+    <div class="home-screen screen no-active">
+      <div class="title title-name"><h1>Hello Michał</h1></div>
       <div id="target"></div>
-
-      <!-- settings -->
-      <!-- 
-  <div class="settings-bnt">
-    <div class="dot" id="dot-1"></div>
-    <div class="dot" id="dot-1"></div>
-    <div class="dot" id="dot-1"></div>
-  </div>
-  <div class="settings-text"><h2>settings</h2></div>
-  -->
 
       <div class="btn-container" id="add-deck-container">
         <button class="btn add-deck-btn"></button>
@@ -43,7 +60,7 @@
     </div>
 
     <!-- ADDING DECK SCREEN -->
-    <div class="adding-deck-screen screen hidden">
+    <div class="adding-deck-screen screen no-active">
       <textarea
         type="text"
         id="name-your-deck"
@@ -87,7 +104,7 @@
 
     <!-- ---------------------- -->
     <!-- ADDING CARD SCREEN -->
-    <div class="adding-card-screen screen hidden">
+    <div class="adding-card-screen screen no-active">
       <div class="deck-small side1 side1-card">
         <textarea
           type="text"
@@ -123,7 +140,7 @@
 
     <!-- ---------------------- -->
     <!-- DECK SCREEN -->
-    <div class="deck-screen screen hidden">
+    <div class="deck-screen screen no-active">
       <div id="deck-screen-title"><h1>Hello Michał</h1></div>
 
       <div class="stack stack1" id="s1">
@@ -200,7 +217,7 @@
       </div>
 
       <div class="btn-container" id="add-new-card">
-        <button class="btn add-deck-btn"></button>
+        <button class="btn add-new-card"></button>
         <h4>Add new card</h4>
       </div>
 
@@ -218,7 +235,7 @@
         <h4>Select at least<br />one stack to start...</h4>
       </div>
 
-      <div class="btn go-back-btn">
+      <div class="btn go-back-btn" >
         <div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -236,7 +253,7 @@
 
     <!-- ---------------------- -->
     <!-- LEARN SCREEN -->
-    <div class="learn-screen screen hidden card-container">
+    <div class="learn-screen screen no-active card-container">
       <div id="target-card"></div>
 
       <div class="learning-counter"><p>7/7</p></div>
@@ -348,8 +365,8 @@
     <!-- CONFIRMATION SCREEN -->
     <div id="confirmation-screen-target"></div>
 
-    <script src="showDeckScreen.js"></script>
-    <script src="users-data.js"></script>
-    <script src="script.js"></script>
+    <script src="showDeckScreen.js" type="module"></script>
+    <script src="users-data.js" type="module"></script>
+    <script src="script.js" type="module"></script>
   </body>
 </html>
