@@ -1088,5 +1088,5 @@ const skipLogin = function () {
 };
 
 setTimeout(() => {
-  skipLogin();
+  // skipLogin();
 }, 400);
